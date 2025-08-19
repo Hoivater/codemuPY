@@ -77,3 +77,50 @@ for i in lisAFromStr:
 		n_listA.append(i)
 
 print (n_listA)
+
+'''Дан список с числами. Подсчитайте количество отрицательных чисел в этом списке.'''
+
+listA = [
+	10, 
+	2,
+	3,
+	-5,
+	-8,
+	3,
+	12
+]
+count = 0
+for i in listA:
+	if i < 0:
+		count += 1
+
+print (count)
+
+'''Дан список с числами. Оставьте в нем только положительные числа.'''
+
+nlistA = []
+for i in listA:
+	if i > 0: nlistA.append(i)
+
+print(nlistA)
+
+'''Дана строка. Удалите предпоследний символ из этой строки.'''
+
+#first solution
+
+stringA = 'abdsqqacdeabc'
+nstringA = ''
+for i in range(len(stringA)):
+	if i != len(stringA)-2:
+		nstringA += stringA[i]
+
+print(stringA)
+print(nstringA)
+
+#second solution
+
+nstringA2 = stringA[0:-2] + stringA[-1:]
+
+
+print(stringA)
+print(nstringA2)
