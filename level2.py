@@ -48,4 +48,45 @@ print ('@' + newString)
 
 '''Выведите в консоль все числа в промежутке от 10 до 1000, сумма первой и второй цифры которых равна пяти.'''
 listB = list(range(10, 1001))
+nListB = []
+for i in listB:
+	blist = list(str(i))
+	if (int(blist[0]) + int(blist[1])) == 5:
+		nListB.append(i)
 
+
+print (nListB)
+
+
+'''Дана некоторая строка:
+
+'abcdeabc'
+Очистите ее от дублей символов:
+
+'abcde'''
+
+listA = 'abcdeabc'
+dictA = {}
+setA = set(list(listA))
+lsetA = list(setA)
+
+#оставить строку как она есть???
+print(listA)
+nstr = ''
+for i in range(len(setA)):
+	dictA[lsetA[i]] = 0
+for k in listA:
+	dictA[k] += 1
+
+print (dictA)
+
+for lA in listA:
+	for keyA, valueA in dictA.items():
+		if keyA == lA and valueA > 0:
+			nstr += lA
+			dictA[keyA] -= 1
+
+
+print (dictA)
+
+print(nstr)
