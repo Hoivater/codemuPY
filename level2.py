@@ -65,28 +65,15 @@ print (nListB)
 
 'abcde'''
 
-listA = 'abcdeabc'
-dictA = {}
-setA = set(list(listA))
-lsetA = list(setA)
-
+stringA = 'abdsqqacdeabc'
+n_listA = []
 #оставить строку как она есть???
-print(listA)
-nstr = ''
-for i in range(len(setA)):
-	dictA[lsetA[i]] = 0
-for k in listA:
-	dictA[k] += 1
+print(stringA)
 
-print (dictA)
+lisAFromStr = list(stringA)
 
-for lA in listA:
-	for keyA, valueA in dictA.items():
-		if keyA == lA and valueA > 0:
-			nstr += lA
-			dictA[keyA] -= 1
+for i in lisAFromStr:
+	if i not in n_listA:
+		n_listA.append(i)
 
-
-print (dictA)
-
-print(nstr)
+print (n_listA)
