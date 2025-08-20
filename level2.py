@@ -124,3 +124,74 @@ nstringA2 = stringA[0:-2] + stringA[-1:]
 
 print(stringA)
 print(nstringA2)
+
+'''9 Дан список со строками. Оставьте в этом списке только те строки, которые заканчиваются на .html.'''
+
+listA = [
+	'/строка один',
+	'ст будет два',
+	'строкhttp://вооочень.html',
+	'http://такаявотпра вильная',
+	'еще обычная http://',
+	'http:/просто строка с од.html',
+	'Еще одна',
+	'http://',
+	'hhttp://'
+]
+nListA = []
+for i in listA:
+	listI = i.split(".")
+	if len(listI) > 1 and listI[-1] == 'html':
+		nListA.append(i)
+
+print (nListA)
+
+'''10 Дан список с дробями:
+
+[1.456, 2.125, 3.32, 4.1, 5.34]
+Округлите эти дроби до одного знака в дробной части.'''
+
+listNum = [1.456, 2.125, 3.32, 4.1, 5.34]
+for i in range(len(listNum)):
+	listNum[i] = round(listNum[i], 1)
+
+print (listNum)
+
+'''11 Дан словарь:
+
+{
+	'a': 1,
+	'b': 2,
+	'c': 3, 
+	'd': 4,
+}
+Получите список его значений:
+
+[1, 2, 3, 4]'''
+dictA = {
+	'a': 1,
+	'b': 2,
+	'c': 3, 
+	'd': 4
+}
+print (list(dictA.values()))
+
+
+'''12 Даны два слова. Проверьте, что последняя буква первого слова совпадает с первой буквой второго слова.'''
+
+wordA = 'буквой'
+wordB = 'йслова'
+
+if wordA[-1] == wordB[0]: print ("совпадают")
+else: print("Не совпадают")
+
+'''Дана некоторая строка. Найдите позицию третьего нуля в строке.'''
+stringA = "dq0eg0wth40efwgrw0"
+count = 0
+lStringA = stringA.split('0')
+if len(lStringA) >= 4:
+	for x in range(3):
+		count += len(lStringA[x]) + 1
+
+print(stringA)
+print(f'третий 0 - {count} по счету')
