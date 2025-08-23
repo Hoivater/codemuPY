@@ -174,6 +174,10 @@ for i in listC:
 for i in listC:
 	if i%3 == 0:
 		print (i)
+#второе решение 
+listE = [x for x in range(101) if x%3 == 0]
+print ("@@@@@@@")
+print (listE)
 
 '''23 Дан список:
 

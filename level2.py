@@ -195,3 +195,254 @@ if len(lStringA) >= 4:
 
 print(stringA)
 print(f'третий 0 - {count} по счету')
+
+'''14 Даны числа, разделенные запятыми:
+
+'12,34,56'
+Найдите сумму этих чисел.'''
+stringM = '12,34,56'
+listM = stringM.split(',')
+count = 0
+stringCount = ''
+for i in listM:
+	count += int(i)
+	stringCount += f"{i} + "
+print(f'{stringCount} = {count}')
+
+
+'''15 Дана дата в следующем формате:
+
+'2025-12-31'
+Преобразуйте эту дату в следующий словарь:
+
+{
+	'year' : '2025',
+	'month': '12',
+	'day'  : '31',
+}'''
+
+strDate = '2025-12-31'
+listDateValue = strDate.split('-')
+listDateKey = ['year', 'month', 'day']
+dictDate = dict(zip(listDateKey, listDateValue))
+
+print (dictDate)
+
+
+'''16 Дан словарь:
+
+{
+	'a': 1,
+	'b': 2,
+	'c': 3, 
+	'd': 4,
+}
+Получите сет его значений:
+
+{1, 2, 3, 4}'''
+
+dictA = {
+	'a': 1,
+	'b': 2,
+	'c': 3, 
+	'd': 4
+}
+
+setdictA = set(list(dictA.values()))
+print (setdictA)
+
+'''17 Дана некоторая строка с буквами и цифрами. Получите позицию первой цифры в этой строке.'''
+
+stringS = 'Да2на н343еко2т4ора4я с44т5рока.'
+numericN = -1
+for j in range(len(stringS)):
+	if numericN == -1:
+		for i in range(10):
+			if stringS[j] == str(i):
+				numericN = j
+				break
+print(f'Позиция: {numericN}, то есть: {stringS[numericN]}')
+
+'''18 Дано число. Выведите в консоль количество четных цифр в этом числе.'''
+numberD = '24314352'
+listD = list(str(numberD))
+try:
+	listAevel = [x for x in listD if int(x)%2 == 0]
+	print (len(listAevel))
+except ValueError:
+	print('не преобразовать к числу!')
+
+'''19 Дан словарь:
+
+{
+	'a': 1,
+	'b': 2,
+	'c': 3, 
+	'd': 4,
+}
+Получите список его ключей:
+
+['a', 'b', 'c', 'd']'''
+
+dictA = {
+	'a': 1,
+	'b': 2,
+	'c': 3, 
+	'd': 4
+}
+print (dictA.keys())
+
+
+'''20 Дана некоторая строка:
+
+'abcde'
+Переведите в верхний регистр все нечетные буквы этой строки. В нашем случае должно получится следующее:
+
+'AbCdE'''
+stringA = 'abcde'
+liststrA = list(stringA)
+for i in range(len(liststrA)):
+	if i % 2 == 0:
+		liststrA[i] = liststrA[i].upper()
+nstringA = "".join(liststrA)
+print(nstringA)
+
+'''21 Дана некоторая строка со словами:
+
+'aaa bbb ccc'
+Сделайте заглавным первый символ каждого слова в этой строке. В нашем случае должно получится следующее:
+
+'Aaa Bbb Ccc'''
+
+stringA = 'Сделайте заглавным первый символ'
+listA = stringA.split(' ')
+listkey = list(range(len(listA)))
+dictA = dict(zip(listkey, listA))
+for key, value in dictA.items():
+	listV = list(value)
+	listV[0] = listV[0].upper()
+	strV = ''.join(listV)
+	dictA[key] = strV
+
+valueA = list(dictA.values())
+
+print (stringA)
+print(" ".join(valueA))
+
+# print (dictA)
+
+'''22 Дана дата в следующем формате:
+
+'2025-12-31'
+Преобразуйте эту дату в следующий кортеж:
+
+('31', '12', '2025')'''
+dates = '2025-12-31'
+listD = dates.split('-')
+print(tuple(listD))
+
+
+'''23 Дана некоторая строка, например, вот такая:
+
+'023m0df0dfg0'
+Получите сет позиций всех нулей в этой в строке.'''
+
+stringG = '023m0df0dfg0'
+list0 = []
+for i in range(len(stringG)):
+	if stringG[i] == '0':
+		list0.append(i)
+
+print(set(list0))
+
+'''24  Дана некоторая строка:
+
+'abcdefg'
+Удалите из этой строки каждый третий символ. В нашем случае должно получится следующее:
+
+'abdeg'''
+
+stringA = 'abcdefg'
+listA  = list(stringA)
+
+resultNumA = [x for x in range(len(stringA)) if x%3==0]
+resultA = ""
+for i in range(len(stringA)):
+	if i%3!=0:
+		resultA += stringA[i]
+print (stringA)
+print (resultA)
+
+
+'''25 Дан некоторый список, например, вот такой:
+
+[1, 2, 3, 4, 5, 6]
+Поделите сумму элементов, стоящих на четных позициях, на сумму элементов, стоящих на нечетных позициях. '''
+listA = [1, 2, 3, 4, 5, 6]
+sum_even = 0
+sum_odd = 0
+for i in range(len(listA)):
+	if i % 2 == 0:
+		sum_even += listA[i]
+	else:
+		sum_odd += listA[i]
+print(sum_even/sum_odd)
+
+
+
+
+
+'''26 Дана дата в следующем формате:
+
+['2025', '12', '31']
+Преобразуйте эту дату в следующий кортеж:
+
+('31', '12', '2025') '''
+listA = ['2025', '12', '31']
+
+listB = [listA[2], listA[1], listA[0]]
+
+print(tuple(listB))
+
+
+'''27 Дана некоторая строка с буквами и цифрами. Получите список позиций всех цифр из этой строки.'''
+
+stringA = 'ef2rgegr42gr42tgr43tr3rg42f'
+listA = list(stringA)
+listNumber = list(range(10))
+for i in range(len(stringA)):
+	
+'''28 Дана некоторая строка:
+
+'AbCdE'
+Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее:
+
+'aBcDe'''
+
+
+'''29 Дан некоторый список с числами, например, вот такой:
+
+[1, 2, 3, 4, 5, 6]
+Слейте пары элементов вместе:
+
+[12, 34, 56]'''
+
+
+'''30 Дана некоторая строка со словами:
+
+'aaa bbb ccc eee fff'
+Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее:
+
+'aaa Bbb ccc Eee fff'''
+
+
+'''31 '''
+
+
+'''32 '''
+
+
+'''33 '''
+
+
+
