@@ -408,16 +408,31 @@ print(tuple(listB))
 '''27 Дана некоторая строка с буквами и цифрами. Получите список позиций всех цифр из этой строки.'''
 
 stringA = 'ef2rgegr42gr42tgr43tr3rg42f'
+print (stringA)
 listA = list(stringA)
-listNumber = list(range(10))
-for i in range(len(stringA)):
+listNum = []
+for i in range(len(listA)):
+	if listA[i].isdigit():
+		listNum.append(i)
+
+print(f'{listNum} - список позиций цифр')
+
 	
 '''28 Дана некоторая строка:
 
 'AbCdE'
 Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее:
 
-'aBcDe'''
+aBcDe'''
+stringA = 'AbCdE'
+listA = list(stringA)
+print (f'{stringA} - исходная строка')
+for i in range(len(listA)):
+	if listA[i].islower():
+		listA[i] = listA[i].upper()
+	else:
+		listA[i] = listA[i].lower()
+print ("".join(listA))
 
 
 '''29 Дан некоторый список с числами, например, вот такой:
@@ -427,6 +442,12 @@ for i in range(len(stringA)):
 
 [12, 34, 56]'''
 
+listA = [1, 2, 3, 4, 5, 6]
+nlistA = []
+for i in range(int(len(listA)/2)):
+	nlistA.append(f'{listA[2*i]}{listA[2*i+1]}')
+
+print(listA, "\n", nlistA)
 
 '''30 Дана некоторая строка со словами:
 
@@ -434,6 +455,13 @@ for i in range(len(stringA)):
 Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее:
 
 'aaa Bbb ccc Eee fff'''
+stringA = 'aaa bbb ccc eee fff'
+listA = stringA.split(' ')
+for i in range(len(listA)):
+	if i%2 != 0:
+		listA[i] = f'{listA[i][0].upper()}{listA[i][1:]}'
+
+print(" ".join(listA))
 
 
 '''31 '''
