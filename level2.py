@@ -448,6 +448,11 @@ for i in range(int(len(listA)/2)):
 	nlistA.append(f'{listA[2*i]}{listA[2*i+1]}')
 
 print(listA, "\n", nlistA)
+# #true solution:
+# nlistA = []
+# for i, name in enumerate(listA):
+# 	if i%2 != 0:
+# 		nListA.append(f'{listA[2*i]}{listA[2*i+1]}')Hnm#fg7Z
 
 '''30 Дана некоторая строка со словами:
 
