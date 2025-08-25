@@ -30,8 +30,26 @@ plt.show()
 '''
 #построение гистограмм сгруппированных числовых значений
 from collections import Counter
-grades = [83, 95, 91,87,70,0,85,82,100,67,73,77]
+grades = [83, 95, 91, 87, 70, 0, 85, 82, 100, 67, 73, 77]
 #сгруппировать оценки подецильно, но разместить 100 вместе с отметками 90 и выше
 histogram = Counter(min(grade // 10*10, 90) for grade in grades)
-print(grades)
-print(histogram)
+
+#аналог строки 35. Пиздец
+# histogram_f = []
+# for grade in grades:
+# 	new = grade // 10 * 10
+# 	if new > 90: new = 90
+# 	histogram_f.append(new)
+# hist_f = Counter(histogram_f)
+
+plt.bar([x+5 for x in histogram.keys()], #сдвиг каждого из столбцов на 5 единиц влево
+	list(histogram.values()), #высота столбца
+	10) #ширина столбца
+
+plt.axis([-5, 105, 0, 5]) #ось x [-5 : 105] ось y [0 : 5]
+plt.xticks([10*x for x in range(11)])#метки по оси x: 0, 10, 20... 100
+plt.xlabel('дециль')
+plt.ylabel('число студентов')
+plt.title('распределение оценок за экзамен №1')
+plt.show()
+
