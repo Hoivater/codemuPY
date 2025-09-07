@@ -220,6 +220,11 @@ lst2 = [4, 5, 6, 7, 8]
 
 [4, 5]
 '''
+lst1 = [1, 2, 3, 4, 5]
+lst2 = [4, 5, 6, 7, 8]
+
+lst3 = set(lst1).intersection(set(lst2))
+print (list(lst3))
 
 
 '''
@@ -230,16 +235,33 @@ num = 5;
 
 '00000'
 '''
+num = 5
+strA = ''
+for i in range(5):
+	strA += '0'
 
+print(strA)
 
 '''
 Дан список со числами. Удалите из него числа, состоящие более чем из трех цифр.
 '''
-
-
+listN = [32, 134, 52344, 32, 52542, 25, 43, 43435]
+listNew = [x for x in listN if round(x/1000) == 0]
+print(listNew)
 '''
 Дана строка. Проверьте, что эта строка состоит только из цифр.
 '''
+stringA = "3425413342123"
+listNumeric = []
+listAlphabet = []
+for i, value in enumerate(stringA):
+	if value.isdigit():
+		listNumeric.append(value)
+	else:
+		listAlphabet.append(value)
+
+if len(listAlphabet) > 0: print(f"{stringA} - строка содрежит буквы: {listAlphabet}")
+else: print(f"{stringA} - строка не содрежит букв")
 
 '''
 Дано число, например, вот такое:
@@ -247,7 +269,12 @@ num = 5;
 num = 12345;
 Проверьте, что все цифры этого числа больше нуля.
 '''
-
+num = 123405
+minus = 0
+stringA = str(num)
+for i, value in enumerate(stringA):
+	if (int(value) == 0): minus += 1 
+print("есть цифры равные 0") if minus>0 else print("отсутсвуют 0")
 
 '''
 Даны два списка:
@@ -256,15 +283,31 @@ lst1 = [1, 2, 3, 4, 5]
 lst2 = [1, 2, 3]
 Проверьте, что все элементы первого списка есть во втором.
 '''
+lst1 = [1, 2, 3, 4, 5]
+lst2 = [1, 2, 3]
+
+for i in lst2:
+	if i in lst1:
+		print(f'элемент {i} найден')
+	else:
+		print(f'элемент {i} не найден')
 
 '''
 Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.
 '''
+strA = 'Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.'
 
 
 '''
 Дана строка. Проверьте, что эта строка состоит только из четных цифр.
 '''
+
+stringA = '4848838466'
+n = 0
+for x, value in enumerate(stringA):
+	if int(value)%2!=0: n+=1
+print ('только четные цифры') if n == 0 else print ('есть нечетные цифры')
+
 
 '''
 Даны две строки:
