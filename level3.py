@@ -295,7 +295,11 @@ for i in lst2:
 '''
 Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.
 '''
-strA = 'Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.'
+strA = 'Дана строка Сделайте заглавной последнюю букву каждого слова в этой строке'
+listA = strA.split(' ')
+listNew = [i[0:-1] + i[-1].upper() for i in listA]
+print(' '.join(listNew))
+
 
 
 '''
@@ -319,6 +323,17 @@ txt2 = '45678'
 '45'
 '''
 
+txt1 = '12345'
+txt2 = '45678'
+listA = []
+listB = []
+for i, value in enumerate(txt1):
+	listA.append(txt1[i])
+	listB.append(txt2[i])
+
+setN = set(listA).intersection(set(listB))
+print ("".join(list(setN)))
+
 
 '''
 Дана некоторая строка:
@@ -328,13 +343,16 @@ txt2 = '45678'
 
 'A BC DEF ghij'
 '''
-
-
+stringA = 'a bc def ghij'
+listA = stringA.split(' ')
+listN = [i.upper() if len(i) <= 3 else i for i in listA]
+print (' '.join(listN))
 '''
 Дан список со числами. Проверьте, что все числа из этого списка содержат в себе цифру 3.
 '''
-
-
+listA = [2233, 3432, 3422, 232, 4455, 122]
+listN = [i for i in listA if '3' in str(i)]
+print(f'нет цифры три в {len(listA) - len(listN)} числах списка')
 '''
 Через запятую написаны числа. Получите максимальное из этих чисел.
 '''
