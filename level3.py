@@ -130,8 +130,6 @@ else:
 	print(f'{numA} - четные цифры присутствуют. {x}')
 
 
-
-
 '''
 Дано некоторое слово:
 
@@ -357,6 +355,17 @@ print(f'нет цифры три в {len(listA) - len(listN)} числах сп�
 Через запятую написаны числа. Получите максимальное из этих чисел.
 '''
 
+strA = "1,2,3,54,21,23"
+listA = strA.split(',')
+print (listA)
+print(max(listA))
+a = 0
+for i in listA:
+	if (a < int(i)):
+		a = int(i)
+print (a)
+
+
 '''
 Дана строка в формате:
 
@@ -365,6 +374,11 @@ print(f'нет цифры три в {len(listA) - len(listN)} числах сп�
 
 'snake_case'
 '''
+strA = 'kebeb-case'
+
+listA = strA.split('-')
+strB = '_'.join(listA)
+print (f'{strA} -> {strB}')
 
 
 '''
@@ -373,9 +387,14 @@ print(f'нет цифры три в {len(listA) - len(listN)} числах сп�
 'snake_case'
 Преобразуйте ее в формат:
 
-'camelCase'
+'snakeCase'
 '''
+strA = 'snake_case'
+listA = strA.split('_')
+s = listA[1][0].upper()
+strB = listA[0] + s + listA[1][1:]
 
+print(strB)
 
 '''
 Дана строка в формате:
@@ -383,19 +402,36 @@ print(f'нет цифры три в {len(listA) - len(listN)} числах сп�
 'camelCase'
 Преобразуйте ее в формат:
 
-'snake_case'
+'camel_case'
 '''
-
-
+strA = 'camelCase'
+strB = ''
+for i in strA:
+	if i.islower():
+		strB += i
+	else: 
+		strB += '_'+i
+print(strB)
 '''
 Дан список с числами. Удалите из него числа, имеющие два и более нуля.
 '''
+from collections import Counter
+listA = [12, 43, 5400, 3043, 43004, 244]
+print(listA)
+listB = []
+for i, value in enumerate(listA):
+	newA = Counter(str(value))
+	if newA['0'] < 2:
+		listB.append(value)
+print(listB)
+
 
 '''
 Найдите все числа от 1 до 1000, сумма цифр которых равна 13. Результат запишите в сет.
 '''
-
-
+listA = list(range(1,1001))
+listB = [x for x in listA if sum(list(map(int, str(x)))) == 13]
+print (listB)
 '''
 Дан список:
 
@@ -404,7 +440,14 @@ print(f'нет цифры три в {len(listA) - len(listN)} числах сп�
 
 [1, 1, 2, 2, 3, 3]
 '''
+listA = [1, 2, 3]
 
+def functtr(n):
+	return str(n)+str(n)
+
+strA = ''.join(map(functtr, listA))
+
+print(list(map(int, strA)))
 
 '''
 Даны два списка:
