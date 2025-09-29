@@ -460,33 +460,87 @@ lst2 = [4, 5, 6]
 '2,5'
 '3,6'
 '''
-
+lst1 = [1, 2, 3]
+lst2 = [4, 5, 6]
+def funct1(a, b):
+	return (f'{a},{b}')
+print(list(map(funct1, lst1, lst2)))
 
 '''
 Дан список и число. Оставьте в списке только те числа, которые являются делителями заданного числа.
 '''
+listA = [2,3,4,5]
+numA = 12
 
+listB = [x for x in listA if numA%x==0]
+
+print(listB)
 
 '''
 Дан список с числами. После каждого однозначного числа вставьте еще такое же.
 '''
 
+listA = [23,2,34,3,435,54,43,2]
+listNum = []
+listValue = []
+listNew = listA*1
+for num,x in enumerate(listA):
+	if x<10:
+		listNum.append(num)
+		listValue.append(x)
+
+
+for x, value in enumerate(listNum):
+	listNum[x] = value + x
+	listNew.insert(listNum[x], listValue[x])
+
+
+
+
+print(listA)
+print(listNew)
 
 '''
 Даны два числа. Получите список цифр, которые есть и в одном, и во втором числе.
 '''
 
+strA = 21328
+strB = 124485
+
+setA = set(map(int, str(strA)))
+setB = set(map(int, str(strB)))
+
+print(list(setA.intersection(setB)))
 
 '''
 Дано число. Получите список позицией всех цифр 3 в этом числе, за исключением первой и последней.
 '''
-
+numA = 12334354454233
+listA = list(map(int, str(numA)))
+listN = []
+for key, value in enumerate(listA):
+	if value == 3 and key != 0 and key != len(listA)-1:
+		listN.append(key)
+print(numA)
+print(listN)
 
 '''
 Дан список со числами. Оставьте в нем числа, состоящие из разных цифр, а остальные удалите.
 '''
 
+listA = [32,3244,4344,444,333,4345,222]
+listValueDel = []
+print(listA)
 
+for key, value in enumerate(listA):
+	a = list(map(int, str(value)))
+	b = a[0]
+	for i in a:
+		if i != b:
+			listValueDel.append(value)
+			break
+
+print(listValueDel)
 '''
 Даны два списка:
 
@@ -494,6 +548,12 @@ lst1 = [1, 2, 3];
 lst2 = [1, 2, 3, 4, 5];
 Удалите из большего списка лишние элементы с конца так, чтобы длины списков стали одинаковыми.
 '''
+lst1 = [1, 2, 3]
+lst2 = [1, 2, 3, 4, 5]
+
+print(f'список lst1 - {lst1}')
+print(f'список уменьшенный lst2 - {lst2[0:len(lst1)]}')
+
 
 
 '''
@@ -504,19 +564,18 @@ lst2 = [1, 2, 3, 4, 5];
 
 [321, 654, 987]
 '''
+listA = [123, 456, 789]
+listN = []
+a = ''
+for key, value in enumerate(listA):
+	listN.append(list(map(str, str(value))))
 
-'''
+for keys,i in enumerate(listN):
+	for j in reversed(i):
+		a += j
 
-'''
+	listN[keys] = int(a)
+	a = ''
 
-'''
-
-'''
-
-'''
-
-'''
-
-'''
-
-'''
+print(listA)
+print(listN)
